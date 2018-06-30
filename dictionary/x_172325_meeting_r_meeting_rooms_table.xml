@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Meeting Rooms Table" max_length="40" name="x_172325_meeting_r_meeting_rooms_table" type="collection">
+        <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Booked By" max_length="40" name="booked_by" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="Email ID" max_length="40" name="email" type="string"/>
+        <element label="From Date" max_length="40" name="from_date" type="glide_date_time"/>
+        <element choice="1" label="Location" max_length="40" name="location" type="choice">
+            <choice>
+                <element label="Maruthi Infotech" value="1"/>
+                <element label="Salapuria Hallmark" value="2"/>
+                <element label="Signet Office" value="3"/>
+                <element label="Solitaire Office" value="4"/>
+            </choice>
+        </element>
+        <element choice="1" label="Manager Approval" max_length="40" name="manager_approval" type="choice">
+            <choice>
+                <element label="Approved" value="2"/>
+                <element label="Not Required" value="4"/>
+                <element label="Rejected" value="3"/>
+                <element label="Waiting For Approval" value="1"/>
+            </choice>
+        </element>
+        <element label="Meeting Room" max_length="32" name="meeting_room" reference="x_172325_meeting_r_meeting_rooms" type="reference"/>
+        <element label="Meeting title" max_length="40" name="meeting_title" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="No of Persons to accomodate" max_length="40" name="persons" type="integer"/>
+        <element label="Phone number" max_length="40" name="phone" type="string"/>
+        <element choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element label="Blocked" value="3"/>
+                <element label="Booked" value="1"/>
+                <element label="Cancelled" value="2"/>
+            </choice>
+        </element>
+        <element label="To Date" max_length="40" name="to_date" type="glide_date_time"/>
+        <index name="index">
+            <element name="meeting_room"/>
+        </index>
+    </element>
+</database>
